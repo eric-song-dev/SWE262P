@@ -4,6 +4,6 @@
 
 ```shell
 cd ./week1
-g++ Main.cpp -o Main -std=c++11
-./Main ../pride-and-prejudice.txt
+g++ Main.cpp -o Main.out -std=c++11
+./Main.out ../pride-and-prejudice.txt
 ```
