@@ -19,7 +19,7 @@ g++ Main.cpp -o Main.out -std=c++11
 ### four
 
 ```bash
-cd ./week1
+cd ./week2
 ```
 
 ```bash
@@ -33,7 +33,7 @@ g++ Four.cpp -o Four.out -std=c++11
 ### five
 
 ```bash
-cd ./week1
+cd ./week2
 ```
 
 ```bash
@@ -47,7 +47,7 @@ g++ Five.cpp -o Five.out -std=c++11
 ### six
 
 ```bash
-cd ./week1
+cd ./week2
 ```
 
 ```bash
