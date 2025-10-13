@@ -51,9 +51,5 @@ cd ./week2
 ```
 
 ```bash
-go build -o Six.out six.go
-```
-
-```bash
-./Six.out ../pride-and-prejudice.txt
+go run Six.go ../pride-and-prejudice.txt
 ```
