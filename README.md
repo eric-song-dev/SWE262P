@@ -16,7 +16,7 @@ g++ Main.cpp -o Main.out -std=c++11
 
 ## week2
 
-### four
+### Four
 
 ```bash
 cd ./week2
@@ -30,7 +30,7 @@ g++ Four.cpp -o Four.out -std=c++11
 ./Four.out ../pride-and-prejudice.txt
 ```
 
-### five
+### Five
 
 ```bash
 cd ./week2
@@ -44,7 +44,7 @@ g++ Five.cpp -o Five.out -std=c++11
 ./Five.out ../pride-and-prejudice.txt
 ```
 
-### six
+### Six
 
 ```bash
 cd ./week2
