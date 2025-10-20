@@ -79,7 +79,7 @@ std::vector<std::string>& parseRecursively(std::ifstream& file, std::vector<std:
 
 
 int main(int argc, char* argv[]) {
-    std::cout << "please execute 'ulimit -s 65532' in the terminal first, otherwise a stack overflow will occur\n\n\n" << std::endl;
+    std::cout << "if a stack overflow occured, please execute 'ulimit -s 65532' in the terminal\n\n\n" << std::endl;
 
     if (argc != 2) {
         std::cerr << "wrong usage, please enter: " << argv[0] << " <filename>" << std::endl;
