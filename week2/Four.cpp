@@ -14,6 +14,7 @@
 #include <unordered_set>
 #include <cctype>
 #include <sstream>
+#include <algorithm>
 
 const std::string STOP_WORDS_PATH = "../stop_words.txt";
 const int MAX_COUNT = 25;
