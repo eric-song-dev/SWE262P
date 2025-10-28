@@ -67,7 +67,7 @@ public:
 class StopWordManager {
 public:
     StopWordManager(WordFrequencyFramework& framework) {
-        framework.registerForLoadEvent([this](const std::string& path) { this->onLoad(); });
+        framework.registerForLoadEvent([this](const std::string& path) { this->load(); });
     }
 
     const std::unordered_set<std::string>& getStopWords() const {
@@ -97,7 +97,7 @@ private:
         return true;
     }
 
-    void onLoad() {
+    void load() {
         if (!loadStopWords(STOP_WORDS_PATH)) {
             std::cerr << "failed to load stop words" << std::endl;
         }
