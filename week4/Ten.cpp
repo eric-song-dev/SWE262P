@@ -122,9 +122,6 @@ std::string outputResults(const std::vector<std::pair<std::string, int>>& wordVe
 
 template<typename T>
 class TheOne {
-private:
-    T _value;
-
 public:
     explicit TheOne(T v) : _value(v) {}
 
@@ -139,6 +136,9 @@ public:
     void print() const {
         std::cout << *static_cast<const std::string*>(&_value);
     }
+
+private:
+    T _value;
 };
 
 int main(int argc, char* argv[]) {
