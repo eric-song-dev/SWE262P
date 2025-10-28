@@ -65,9 +65,16 @@ public:
 #pragma mark - Application
 
 class StopWordManager {
-private:
-    std::unordered_set<std::string> stopWords;
+public:
+    StopWordManager(WordFrequencyFramework& framework) {
+        framework.registerForLoadEvent([this](const std::string& path) { this->onLoad(); });
+    }
 
+    const std::unordered_set<std::string>& getStopWords() const {
+        return stopWords;
+    }
+
+private:
     bool loadStopWords(const std::string& filename) {
         std::ifstream file(filename);
         std::string line;
@@ -96,21 +103,22 @@ private:
         }
     }
 
-public:
-    StopWordManager(WordFrequencyFramework& framework) {
-        framework.registerForLoadEvent([this](const std::string& path) { this->onLoad(); });
-    }
-
-    const std::unordered_set<std::string>& getStopWords() const {
-        return stopWords;
-    }
+private:
+    std::unordered_set<std::string> stopWords;
 };
 
 class FileDataProcessor {
-private:
-    std::string path;
-    std::vector<LineEventHandler> lineEventHandlers;
+public:
+    FileDataProcessor(WordFrequencyFramework& framework) {
+        framework.registerForLoadEvent([this](const std::string& path) { this->load(path); });
+        framework.registerForDoWorkEvent([this]() { this->processFile(); });
+    }
 
+    void registerForLineEvent(LineEventHandler handler) {
+        lineEventHandlers.push_back(handler);
+    }
+
+private:
     void load(const std::string& path) {
         this->path = path;
     }
@@ -131,22 +139,19 @@ private:
         inputFile.close();
     }
 
-public:
-    FileDataProcessor(WordFrequencyFramework& framework) {
-        framework.registerForLoadEvent([this](const std::string& path) { this->load(path); });
-        framework.registerForDoWorkEvent([this]() { this->processFile(); });
-    }
-
-    void registerForLineEvent(LineEventHandler handler) {
-        lineEventHandlers.push_back(handler);
-    }
+private:
+    std::string path;
+    std::vector<LineEventHandler> lineEventHandlers;
 };
 
 class WordCounter {
-private:
-    std::unordered_map<std::string, int> wordCounts;
-    const StopWordManager& stopWordManager;
+public:
+    WordCounter(WordFrequencyFramework& framework, FileDataProcessor& processor, const StopWordManager& manager) : stopWordManager(manager) {
+        processor.registerForLineEvent([this](const std::string& line) { this->processLine(line); });
+        framework.registerForEndEvent([this]() { this->printResults(); });
+    }
 
+private:
     void toLower(std::string& str) {
         std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) { 
             return std::tolower(c); 
@@ -191,12 +196,9 @@ private:
         }
     }
 
-public:
-    WordCounter(WordFrequencyFramework& framework, FileDataProcessor& processor, const StopWordManager& swManager)
-        : stopWordManager(swManager) {
-        processor.registerForLineEvent([this](const std::string& line) { this->processLine(line); });
-        framework.registerForEndEvent([this]() { this->printResults(); });
-    }
+private:
+    std::unordered_map<std::string, int> wordCounts;
+    const StopWordManager& stopWordManager;
 };
 
 int main(int argc, char* argv[]) {
