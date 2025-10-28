@@ -87,3 +87,47 @@ g++ Eight.cpp -o Eight.out -std=c++11
 ```bash
 ./Eight.out ../pride-and-prejudice.txt
 ```
+
+## week4
+
+### Nine
+
+```bash
+cd ./week4
+```
+
+```bash
+g++ Nine.cpp -o Nine.out -std=c++11
+```
+
+```bash
+./Nine.out ../pride-and-prejudice.txt
+```
+
+### Ten
+
+```bash
+cd ./week4
+```
+
+```bash
+g++ Ten.cpp -o Ten.out -std=c++11
+```
+
+```bash
+./Ten.out ../pride-and-prejudice.txt
+```
+
+### Fifteen
+
+```bash
+cd ./week4
+```
+
+```bash
+g++ Fifteen.cpp -o Fifteen.out -std=c++11
+```
+
+```bash
+./Fifteen.out ../pride-and-prejudice.txt
+```
