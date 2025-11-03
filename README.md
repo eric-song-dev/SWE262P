@@ -131,3 +131,18 @@ g++ Fifteen.cpp -o Fifteen.out -std=c++11
 ```bash
 ./Fifteen.out ../pride-and-prejudice.txt
 ```
+
+## week5
+
+### JarClasses
+
+```bash
+cd ./week5
+```
+
+```bash
+javac JarClasses.java
+```
+
+```bash
+java JarClasses json-java.jar
