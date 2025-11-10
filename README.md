@@ -147,3 +147,47 @@ javac JarClasses.java
 ```bash
 java JarClasses json-java.jar
 ```
+
+## week6
+
+### TwentyNine
+
+```bash
+cd ./week6
+```
+
+```bash
+g++ TwentyNine.cpp -o TwentyNine.out -std=c++17
+```
+
+```bash
+./TwentyNine.out ../pride-and-prejudice.txt
+```
+
+### Thirty
+
+```bash
+cd ./week6
+```
+
+```bash
+g++ Thirty.cpp -o Thirty.out -std=c++17
+```
+
+```bash
+./Thirty.out ../pride-and-prejudice.txt
+```
+
+### ThirtyTwo
+
+```bash
+cd ./week6
+```
+
+```bash
+g++ ThirtyTwo.cpp -o ThirtyTwo.out -std=c++17
+```
+
+```bash
+./ThirtyTwo.out ../pride-and-prejudice.txt
+```
