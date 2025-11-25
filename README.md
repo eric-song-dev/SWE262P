@@ -191,3 +191,39 @@ g++ ThirtyTwo.cpp -o ThirtyTwo.out -std=c++17
 ```bash
 ./ThirtyTwo.out ../pride-and-prejudice.txt
 ```
+
+## week8
+
+### Twenty
+
+```bash
+cd ./week8
+```
+
+```bash
+chmod +x compile.sh
+```
+
+```bash
+./compile.sh
+```
+
+To run with config_normal_and_normal (Normal Words + Normal Freq):
+```bash
+java -cp classes main.Twenty config_normal_and_normal.properties ../pride-and-prejudice.txt
+```
+
+To run with config_normal_and_first_letter (Normal Words + First Letter):
+```bash
+java -cp classes main.Twenty config_normal_and_first_letter.properties ../pride-and-prejudice.txt
+```
+
+To run with config_z_and_normal (Z Words + Normal Freq):
+```bash
+java -cp classes main.Twenty config_z_and_normal.properties ../pride-and-prejudice.txt
+```
+
+To run with config_z_and_first_letter (Z Words + Normal Freq):
+```bash
+java -cp classes main.Twenty config_z_and_first_letter.properties ../pride-and-prejudice.txt
+```
