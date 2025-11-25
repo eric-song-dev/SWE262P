@@ -208,22 +208,26 @@ chmod +x compile.sh
 ./compile.sh
 ```
 
-To run with config_normal_and_normal (Normal Words + Normal Freq):
-```bash
-java -cp classes main.Twenty config_normal_and_normal.properties ../pride-and-prejudice.txt
-```
+* To run with config_normal_and_normal (Normal Words + Normal Freq):
 
-To run with config_normal_and_first_letter (Normal Words + First Letter):
-```bash
-java -cp classes main.Twenty config_normal_and_first_letter.properties ../pride-and-prejudice.txt
-```
+  ```bash
+  java -cp classes main.Twenty config_normal_and_normal.properties ../pride-and-prejudice.txt
+  ```
 
-To run with config_z_and_normal (Z Words + Normal Freq):
-```bash
-java -cp classes main.Twenty config_z_and_normal.properties ../pride-and-prejudice.txt
-```
+* To run with config_normal_and_first_letter (Normal Words + First Letter):
 
-To run with config_z_and_first_letter (Z Words + Normal Freq):
-```bash
-java -cp classes main.Twenty config_z_and_first_letter.properties ../pride-and-prejudice.txt
-```
+  ```bash
+  java -cp classes main.Twenty   config_normal_and_first_letter.properties ../  pride-and-prejudice.txt
+  ```
+
+* To run with config_z_and_normal (Z Words + Normal Freq):
+
+  ```bash
+  java -cp classes main.Twenty config_z_and_normal.  properties ../pride-and-prejudice.txt
+  ```
+
+* To run with config_z_and_first_letter (Z Words + Normal Freq):
+
+  ```bash
+  java -cp classes main.Twenty config_z_and_first_letter.  properties ../pride-and-prejudice.txt
+  ```
