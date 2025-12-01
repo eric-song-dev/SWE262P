@@ -231,3 +231,33 @@ chmod +x compile.sh
   ```bash
   java -cp classes main.Twenty config_z_and_first_letter.properties ../pride-and-prejudice.txt
   ```
+
+## week9
+
+### Iterators
+
+```bash
+cd ./week9
+```
+
+```bash
+javac Iterators.java
+```
+
+```bash
+java Iterators ../pride-and-prejudice.txt
+```
+
+### Streams
+
+```bash
+cd ./week9
+```
+
+```bash
+javac Streams.java
+```
+
+```bash
+java Streams ../pride-and-prejudice.txt
+```
